@@ -1,11 +1,13 @@
 var gulp = require('gulp'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    coffee = require('gulp-coffee');
 
-/* New js function format, add done() to fix error:
-[12:46:06] The following tasks did not complete: log
-[12:46:06] Did you forget to signal async completion?
-*/
-gulp.task('log', done => {
-  gutil.log('Workflows are awesome');
-  done();
+var coffeeSources = ['components/coffee/tagline.coffee'];
+
+gulp.task('coffee', done => {
+  gulp.src(coffeeSources)
+    .pipe(coffee({ bare: true })
+      .on('error', gutil.log))
+    .pipe(gulp.dest('components/scripts'))
+    done();
 });

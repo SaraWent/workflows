@@ -8,11 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "?.git"
+    "url": "https://github.com/SaraWent/workflows.git"
   },
   "author": "Sara Wentworth",
   "devDependencies": {
     "gulp": "^4.0.1",
+    "gulp-coffee": "^3.0.3",
     "gulp-util": "^3.0.8"
   }
 }
